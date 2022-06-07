@@ -1,0 +1,23 @@
+POST http://localhost:5000/tibber-developer-test/enter-path
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "start": {
+    "x": 10,
+    "y": 22
+  },
+  "commands": [
+    {
+      "direction": "east",
+      "steps": 2
+    },
+    {
+      "direction": "north",
+      "steps": 1
+    }
+  ]
+}
+
+###
