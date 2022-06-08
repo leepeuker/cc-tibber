@@ -1,18 +1,11 @@
-require('dotenv').config()
-const { Client } = require('pg')
+const dbClient = require('./helpers/db')
 const bodyParser = require('body-parser')
 const express = require('express')
-const executionRepository = require('./modules/executions/repository')
-const robot = require('./robot')
-const port = process.env.APP_PORT
+const executionRepository = require('./modules/execution/repository')
+const robot = require('./modules/roboter/roboter')
+const port = 5000
 
-const client = new Client({
-	database: process.env.POSTGRES_DB,
-	user: process.env.POSTGRES_USER,
-	password: process.env.POSTGRES_PASSWORD,
-	host: process.env.POSTGRES_HOST,
-})
-const repo = new executionRepository(client)
+const repo = new executionRepository(dbClient)
 
 const app = express()
 app.use(bodyParser.json())
@@ -34,7 +27,7 @@ app.post('/tibber-developer-test/enter-path', async function (request, response)
 });
 
 (async () => {
-	await client.connect()
+	await dbClient.connect()
 
 	app.listen(port, () => {
 		console.log(`Listening at http://localhost:${port}`)
