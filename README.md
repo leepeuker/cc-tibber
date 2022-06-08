@@ -1,3 +1,5 @@
+I have not worked with node for quite a while, please keep this in mind when checking this out :P 
+
 **Attention:**
 
 There is an annoying issue, it seems when `docker-compose up` is run the first time, it takes a moment for `postgres` to be ready to accept connections.
