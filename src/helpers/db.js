@@ -7,5 +7,6 @@ const dbClient = new Client({
 	password: process.env.POSTGRES_PASSWORD,
 	host: process.env.POSTGRES_HOST,
 })
+dbClient.connect()
 
 module.exports = dbClient

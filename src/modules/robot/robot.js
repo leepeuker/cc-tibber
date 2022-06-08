@@ -1,4 +1,4 @@
-let roboter = class {
+let robot = class {
 
 	constructor (startCoordinateX, startCoordinateY) {
 		this.coordinateX = startCoordinateX
@@ -58,4 +58,4 @@ let roboter = class {
 	}
 }
 
-module.exports = roboter
+module.exports = robot
